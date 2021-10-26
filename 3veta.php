@@ -33,11 +33,22 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-define( 'DMS_PLUGINS_DIR_ABS', __DIR__ );
-define( 'DMS_PLUGINS_DIR_REL', plugins_url( basename( __DIR__ ) ) );
+define( 'VETA_ABS_PATH', __DIR__ );
+define( 'VETA_REL_URL', plugins_url( basename( __DIR__ ) ) );
 
-include_once( DMS_PLUGINS_DIR_ABS . platformSlashes( '/inc/admin-page.php' ) );
+include_once( VETA_ABS_PATH . veta_platform_slashes( '/inc/common.php' ) );
+include_once( VETA_ABS_PATH . veta_platform_slashes( '/inc/admin-page.php' ) );
+include_once( VETA_ABS_PATH . veta_platform_slashes( '/inc/wordpress.php' ) );
+include_once( VETA_ABS_PATH . veta_platform_slashes( '/inc/shortcodes.php' ) );
 
-function platformSlashes( $path ) {
+/**
+ * Used to replace slashes in case of different directory separator (like Windows)
+ *
+ * @param string $path
+ *
+ * @return array|string|string[]
+ */
+function veta_platform_slashes( string $path ) {
 	return str_replace( '/', DIRECTORY_SEPARATOR, $path );
 }
+
