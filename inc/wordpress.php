@@ -15,9 +15,10 @@ add_action( 'plugins_loaded', 'veta_load_textdomain' );
 function veta_admin_styles_script() {
 
 	$admin_base = get_current_screen();
-	if ( null !== $admin_base && 'settings_page_dropdown-multisite-selector' !== $admin_base->base ) {
+	if ( $admin_base !== null && $admin_base->base !== 'toplevel_page_3Veta' ) {
 		return;
 	}
+
 	wp_enqueue_script(
 		'veta-admin-js',
 		VETA_REL_URL . veta_platform_slashes( '/assets/js/3veta-admin.js' ),
