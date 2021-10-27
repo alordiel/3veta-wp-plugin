@@ -36,8 +36,12 @@ function veta_admin_styles_script() {
 
 	//Adding localization for script string
 	$translation_array = array(
-		'wrong_domain' => __( '', '3veta' ),
-		'ajax_url'     => admin_url( 'admin-ajax.php' ),
+		'wrong_domain'      => __( '', '3veta' ),
+		'clipboard_success' => __( 'Copied to Clipboard.', '3veta' ),
+		'clipboard_failed'  => __( 'Copying failed. Please try again.', '3veta' ),
+		'missing_domain'    => __( 'Please enter a valid booking page URL.', '3veta' ),
+		'empty_domain'      => __( 'Please fill the your booking page URL.', '3veta' ),
+		'ajax_url'          => admin_url( 'admin-ajax.php' ),
 	);
 	wp_localize_script( 'veta-admin-js', 'veta_l10n', $translation_array );
 }

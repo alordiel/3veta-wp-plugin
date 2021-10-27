@@ -11,19 +11,23 @@
 		<h2><?php _e( 'Your Booking Page', '3veta' ); ?></h2>
 		<div class="veta-content-box">
 			<div class="veta-flex-box">
-				<div>
+				<div style="line-height: 30px;">
 					<strong><?php _e( 'Your 3veta booking page', '3veta' ) ?>:</strong>
 				</div>
 				<div>
 					<div class="set-veta-account">
-						<input type="text" class="3veta-domain" id="veta-domain">
+						<p class="error-message"></p>
+						<input type="text" class="3veta-domain" id="veta-domain" placeholder="<?php _e('your-domain', '3veta'); ?>">
 						<input type="text" disabled value=".3veta.com/booking" style="width: 145px;">
 					</div>
 					<p><?php _e( 'Your can find your 3veta booking page URL on https://app.3veta.com/my-page', '3veta' ); ?></p>
 				</div>
 				<div>
 					<button type="button" class="veta-button" id="veta-domain-save">
-						<?php _e( 'Save Changes', '3veta' ) ?>
+						<span class="button-text"><?php _e( 'Save Changes', '3veta' ) ?></span>
+						<span class="loading">
+							<span class="dashicons dashicons-update"></span>
+						</span>
 					</button>
 				</div>
 			</div>
@@ -44,18 +48,19 @@
 				</tr>
 				<tr>
 					<td><strong><?php _e( 'Inline', '3veta' ) ?></strong></td>
-					<td><input id="table-inline-height" class="value-input" type="number" value="600"></td>
-					<td><input id="table-inline-width" class="value-input" type="number" value="600"></td>
+					<td><input id="table-inline-height" class="value-input" type="number" value="600" data-type="desktop"></td>
+					<td><input id="table-inline-width" class="value-input" type="number" value="600" data-type="desktop"></td>
 					<td>
 						<input
 							disabled
+							id="desktop-inline-shortcode"
 							type="text"
 							value="[3veta type='inline' width='600px' height='600px']"
-							class="veta-display-shortcode"
+							class="veta-display-shortcode inline-shortcode-field"
 						>
 					</td>
 					<td>
-						<button type="button" id="table-copy-inline-shortcode" class="veta-button">
+						<button type="button" id="table-copy-inline-shortcode" class="veta-button"  data-type="desktop">
 							<?php _e( 'Copy', '3veta' ); ?>
 						</button>
 					</td>
@@ -87,24 +92,25 @@
 					<p>
 						<label for="boxed-inline-height">
 							<?php _e( 'Height (px)', '3veta' ) ?>
-							<input id="boxed-inline-height" class="value-input" type="number" value="600">
+							<input id="boxed-inline-height" class="value-input" type="number" value="600"  data-type="mobile">
 						</label>
 					</p>
 					<p>
 						<label for="boxed-inline-width">
 							<?php _e( 'Width (px)', '3veta' ) ?>
-							<input id="boxed-inline-width" class="value-input" type="number" value="600">
+							<input id="boxed-inline-width" class="value-input" type="number" value="600"  data-type="mobile">
 						</label>
 					</p>
 					<p>
 						<input
 							disabled
+							id="mobile-inline-shortcode"
 							type="text"
 							value="[3veta type='inline' width='600px' height='600px']"
-							class="veta-display-shortcode"
+							class="veta-display-shortcode inline-shortcode-field"
 						>
 					</p>
-					<button type="button" id="boxed-copy-inline-shortcode" class="veta-button">
+					<button type="button" id="boxed-copy-inline-shortcode" class="veta-button"  data-type="mobile">
 						<?php _e( 'Copy', '3veta' ); ?>
 					</button>
 				</div>
@@ -160,3 +166,8 @@
 		</div>
 	</div>
 </div>
+
+<div class="snackbar-message">
+
+</div>
+<input type="hidden" id="_nonce" value="<?php echo wp_create_nonce('craZy_wOrld') ?>">
