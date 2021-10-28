@@ -1,3 +1,6 @@
+<?php
+$domain_name = get_option( '3veta_booking_page' );
+?>
 <div class="veda-container">
 
 	<h1><?php _e( '3veta - Embed your Booking page', '3veta' ) ?></h1>
@@ -17,7 +20,13 @@
 				<div>
 					<div class="set-veta-account">
 						<p class="error-message"></p>
-						<input type="text" class="3veta-domain" id="veta-domain" placeholder="<?php _e('your-domain', '3veta'); ?>">
+						<input
+							type="text"
+							class="3veta-domain"
+							id="veta-domain"
+							value="<?php echo ($domain_name !== false) ? $domain_name : '' ?>"
+							placeholder="<?php _e('your-domain', '3veta'); ?>"
+						>
 						<input type="text" disabled value=".3veta.com/booking" style="width: 145px;">
 					</div>
 					<p><?php _e( 'Your can find your 3veta booking page URL on https://app.3veta.com/my-page', '3veta' ); ?></p>

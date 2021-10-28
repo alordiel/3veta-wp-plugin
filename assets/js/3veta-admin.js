@@ -79,36 +79,52 @@ document.addEventListener('DOMContentLoaded', function () {
       return;
     }
 
-    const button = document.getElementById('veta-domain-save')
-    button.classList.add('active');
-    button.disabled = true;
+    changeStatusAjaxButton(true);
 
     let bookingPage = domainName.value;
     if (bookingPage.indexOf('http') === -1) {
       bookingPage = 'https://' + bookingPage;
       domainName.value = bookingPage;
     }
-    const url = bookingPage + '.3veta.com/booking';
 
+    const data = {
+      action: 'veta_save_booking_page',
+      url: bookingPage,
+      security: document.getElementById('_nonce').value
+    }
+    sendAjaxCall(data)
+  }
+
+  function sendAjaxCall(data) {
     jQuery.ajax({
       url: veta_l10n.ajax_url,
       type: 'POST',
-      data: {
-        action: 'save_booking_page',
-        url: url,
-        security: document.getElementById('_nonce').value
+      dataType: 'JSON',
+      data: data,
+      success: function (response) {
+        if (response.status === 1) {
+          showSnackbarMessage(response.message);
+        } else {
+          showErrorMessage(response.message);
+        }
+        changeStatusAjaxButton(false);
       },
       error: function (xhr, status, error) {
         showErrorMessage(error);
-        button.classList.remove('active');
-        button.disabled = false;
-      },
-      success: function () {
-        console.log(status.ok)
-        button.classList.remove('active');
-        button.disabled = false;
+        changeStatusAjaxButton(false);
       }
     });
+  }
+
+  function changeStatusAjaxButton(isActive) {
+    const button = document.getElementById('veta-domain-save')
+    if (isActive) {
+      button.classList.add('active');
+      button.disabled = true;
+    } else {
+      button.classList.remove('active');
+      button.disabled = false;
+    }
   }
 
   function showErrorMessage(message) {
