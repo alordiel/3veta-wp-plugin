@@ -23,7 +23,7 @@ add_action( 'admin_menu', 'veta_register_3veta_menu_element' );
  */
 function veta_admin_page_template() {
 
-	return include( VETA_ABS_PATH . platformSlashes( '/inc/templates/admin.php' ) );
+	return include( VETA_ABS_PATH . veta_platform_slashes( '/inc/templates/admin.php' ) );
 }
 
 

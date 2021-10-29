@@ -4,7 +4,7 @@
  * Register textdomain.
  */
 function veta_load_textdomain() {
-	load_plugin_textdomain( '3veta', false, VETA_ABS_PATH . platformSlashes( '/languages' ) );
+	load_plugin_textdomain( '3veta', false, VETA_ABS_PATH . veta_platform_slashes( '/languages' ) );
 }
 
 add_action( 'plugins_loaded', 'veta_load_textdomain' );
