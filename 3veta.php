@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:       3Veta
+ * Plugin Name:       3veta Booking Page for WordPress
  * Plugin URI:        https://wordpress.org/plugins/3veta/
  * Description:
  * Version:           0.1
