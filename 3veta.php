@@ -2,15 +2,15 @@
 /**
  * Plugin Name:       3veta Booking Page for WordPress
  * Plugin URI:        https://wordpress.org/plugins/3veta/
- * Description:
+ * Description:       "3veta Booking Page for WordPress" allows you to embed your 3veta booking page to your WordPress website in an easy and simple way.
  * Version:           0.1
- * Author:            alordiel
- * Author URI:        http://profiles.wordpress.org/alordiel
+ * Author:            3veta, alordiel
+ * Author URI:        http://profiles.wordpress.org/3veta
  * Text Domain:       3veta
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Domain Path:       /languages/
- * GitHub Plugin URI: https://github.com/alordiel/dropdown-multisite-selector
+ * GitHub Plugin URI: https://github.com/alordiel/3veta-wp-plugin
  */
 
 /*  Copyright 2014-2021 Alexander Vasilev  (email : alexander.vasilev@protonmail.com)

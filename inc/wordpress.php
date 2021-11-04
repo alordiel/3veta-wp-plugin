@@ -15,7 +15,7 @@ add_action( 'plugins_loaded', 'veta_load_textdomain' );
 function veta_admin_styles_script() {
 
 	$admin_base = get_current_screen();
-	if ( $admin_base !== null && $admin_base->base !== 'toplevel_page_3Veta' ) {
+	if ( $admin_base !== null && $admin_base->base !== 'toplevel_page_3veta' ) {
 		return;
 	}
 

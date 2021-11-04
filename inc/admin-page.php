@@ -5,10 +5,10 @@
 function veta_register_3veta_menu_element() {
 
 	add_menu_page(
-		'3Veta Settings',
-		'3Veta',
+		'3veta Settings',
+		'3veta',
 		'manage_options',
-		'3Veta',
+		'3veta',
 		'veta_admin_page_template',
 		'none'
 	);
@@ -29,7 +29,7 @@ function veta_admin_page_template() {
 
 function veta_menu_icon_style() {
 	$icon = VETA_REL_URL . veta_platform_slashes( '/assets/images/3veta-icon-small.png' );
-	echo '<style> #toplevel_page_3Veta .wp-menu-image { background-image: url("' . $icon . '");background-size: cover; } </style>';
+	echo '<style> #toplevel_page_3veta .wp-menu-image { background-image: url("' . $icon . '");background-size: cover; } </style>';
 }
 
 add_action( 'admin_footer', 'veta_menu_icon_style' );
