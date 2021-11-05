@@ -3,8 +3,8 @@ add_shortcode( '3veta', 'veta_shortcode' );
 function veta_shortcode( $attributes ) {
 	$attributes = shortcode_atts( array(
 		'type'   => '',
-		'width'  => '600px',
-		'height' => '600px',
+		'width'  => '1200px',
+		'height' => '800px',
 	), $attributes, '3veta' );
 
 	$domain_name = get_option( '3veta_booking_page' );

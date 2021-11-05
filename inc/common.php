@@ -47,7 +47,7 @@ add_action( 'wp_ajax_veta_save_booking_page', 'veta_save_booking_page_name' );
  */
 function veta_add_loader_for_full_page_iframe( $content ) {
 
-	if ( strpos( $content, '[3veta type="full"]' ) !== false ) {
+	if ( strpos( $content, '[3veta type="full"]' ) !== false || strpos( $content, "[3veta type='full']" ) !== false) {
 
 		$initial_loader = '<div class="veta-page-loader-mask"><div class="veta-page-loader"></div></div>';
 
