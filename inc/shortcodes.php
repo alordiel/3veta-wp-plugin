@@ -13,7 +13,6 @@ function veta_shortcode( $attributes ) {
 		return '';
 	}
 
-	$domain_name .= '.3veta.com/booking';
 	if ( $attributes['type'] === 'full' ) {
 		$div    = '<div class="iframe-3veta-full-page"></div>';
 		$js     = "<script>
@@ -22,7 +21,7 @@ function veta_shortcode( $attributes ) {
 					iframe3veta.onload = function() {
                         document.querySelector('.veta-page-loader-mask').remove();
 			        };
-					iframe3veta.src = '" . $domain_name . "';
+					iframe3veta.src = '" . esc_url( $domain_name ) . "';
 					document.querySelector('.iframe-3veta-full-page').appendChild(iframe3veta);
 				</script>";
 		$iframe = $div . $js;
