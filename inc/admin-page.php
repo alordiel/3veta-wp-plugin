@@ -28,7 +28,7 @@ function veta_admin_page_template() {
 
 
 function veta_menu_icon_style() {
-	$icon = VETA_REL_URL . veta_platform_slashes( '/assets/images/3veta-icon-small.png' );
+	$icon = VETA_REL_URL . '/assets/images/3veta-icon-small.png';
 	echo '<style> #toplevel_page_3veta .wp-menu-image { background-image: url("' . $icon . '");background-size: cover; } </style>';
 }
 
