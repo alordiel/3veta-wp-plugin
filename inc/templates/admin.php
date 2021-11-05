@@ -1,5 +1,9 @@
 <?php
 $domain_name = get_option( '3veta_booking_page' );
+
+if (!empty($domain_name)) {
+	$domain_name = str_replace('.3veta.com/booking', '', $domain_name);
+}
 ?>
 <div class="veda-container">
 
@@ -24,7 +28,7 @@ $domain_name = get_option( '3veta_booking_page' );
 							type="text"
 							class="3veta-domain"
 							id="veta-domain"
-							value="<?php echo ($domain_name !== false) ? $domain_name : '' ?>"
+							value="<?php echo ($domain_name !== false) ? esc_url( $domain_name ) : '' ?>"
 							placeholder="<?php _e('your-domain', '3veta'); ?>"
 						>
 						<input type="text" disabled value=".3veta.com/booking" style="width: 145px;">

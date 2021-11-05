@@ -18,7 +18,9 @@ function veta_save_booking_page_name() {
 		], JSON_NUMERIC_CHECK );
 	}
 
-	$status = update_option( '3veta_booking_page', $_POST['url'] );
+	$url = esc_url_raw( $_POST['url'] . '.3veta.com/booking', ['https', 'http'] );
+
+	$status = update_option( '3veta_booking_page', $url );
 	if ( ! $status ) {
 		$message = __( 'There was a problem, please try again', '3veta' );
 		$status  = 0;
