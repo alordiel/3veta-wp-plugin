@@ -3,7 +3,7 @@ Contributors: 3veta, alordiel
 Requires at least: 4.9
 Tested up to: 5.8.1
 Requires PHP: 7.0
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: appointment, appointment booking, appointment scheduling, booking, booking calendar, calendar sync, meeting scheduling software, 3veta
@@ -11,8 +11,14 @@ Tags: appointment, appointment booking, appointment scheduling, booking, booking
 3veta Booking Page for WordPress allows you to embed your 3veta booking page to your WordPress website in a simple and easy way.
 
 == Description ==
-"3veta Booking Page for WordPress" is an official plugin maintained by the 3veta team. It allows you to embed your 3veta booking page to your WordPress website in a simple and easy way.
+"3veta Booking Page for WordPress" is an official plugin maintained by the [3veta](https://3veta.com?utm_source=wordpress '3veta site') team. It allows you to embed your 3veta booking page to your WordPress website in a simple and easy way.
 Through this plugin, visitors can schedule meetings directly on your WordPress website. In this way, you can have a fully white-label booking page!
+
+### FEATURES
+* Embed your 3veta booking page directly in WordPress
+* Choose between inline embed and full-page embed
+* Get notified about upcoming bookings directly on your email
+"3veta Booking Page for WordPress" is an official 3veta plugin, and will be fully supported and maintained as long as is necessary.
 
 == Screenshots ==
 
@@ -37,6 +43,9 @@ Through this plugin, visitors can schedule meetings directly on your WordPress w
  2. The front end - widget area + shortcode in post(from version 0.3)
 
 == Changelog ==
+= 1.0.1 =
+
+* removed vertical scroll from parent body when using full screen
 
 = 1.0.0 =
 

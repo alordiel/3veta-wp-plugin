@@ -18,7 +18,7 @@ function veta_save_booking_page_name() {
 		], JSON_NUMERIC_CHECK );
 	}
 
-	$url = esc_url_raw( $_POST['url'] . '.3veta.com/booking', ['https', 'http'] );
+	$url = esc_url_raw( $_POST['url'] . '.3veta.com/booking', [ 'https', 'http' ] );
 
 	$status = update_option( '3veta_booking_page', $url );
 	if ( ! $status ) {
@@ -47,11 +47,14 @@ add_action( 'wp_ajax_veta_save_booking_page', 'veta_save_booking_page_name' );
  */
 function veta_add_loader_for_full_page_iframe( $content ) {
 
-	if ( strpos( $content, '[3veta type="full"]' ) !== false || strpos( $content, "[3veta type='full']" ) !== false) {
+	if ( strpos( $content, '[3veta type="full"]' ) !== false || strpos( $content, "[3veta type='full']" ) !== false ) {
 
 		$initial_loader = '<div class="veta-page-loader-mask"><div class="veta-page-loader"></div></div>';
 
 		$style = '<style>
+			html {
+			    overflow: hidden !important;
+			}
 			.veta-page-loader-mask {
 			  position:fixed;
               top:0;

@@ -3,7 +3,7 @@
  * Plugin Name:       3veta
  * Plugin URI:        https://wordpress.org/plugins/3veta/
  * Description:       "3veta Booking Page for WordPress" allows you to embed your 3veta booking page to your WordPress website in an easy and simple way.
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            3veta
  * Author URI:        https://3veta.com/
  * Text Domain:       3veta
